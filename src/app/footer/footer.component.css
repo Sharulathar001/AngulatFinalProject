@@ -1,0 +1,51 @@
+/* Apply general styling to the footer */
+footer {
+  background-color: #141850; /* Change to your preferred background color */
+  color: #fff; /* Change to your preferred text color */
+  padding: 20px;
+}
+
+/* Style the footer content container */
+.footer-content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow content to wrap to the next line if needed */
+}
+
+/* Style each individual section within the footer */
+.footer-content {
+  flex: 1;
+  padding: 0 20px;
+  margin-bottom: 10px; /* Adjust the margin to reduce space */
+}
+
+/* Style the headings within each section */
+.footer-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Style the links within the footer */
+.footer-content a {
+  color: #fff; /* Change link color */
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Add hover effect for links */
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/* Style the social media icons */
+.footer-content i {
+  margin-right: 5px;
+}
+
+/* Style the privacy policy text */
+.footer-content p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

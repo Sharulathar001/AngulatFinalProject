@@ -1,0 +1,71 @@
+<!-- cart.component.html -->
+<h2 style="text-align: center;">Shopping cart</h2>
+
+<div class="cart">
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+
+    <!-- Display each product -->
+    <div *ngFor="let item of cartItems" class="cart-item">
+
+      <div class="image">
+        <img [src]="item.image" alt="{{ item.name }}" class="product-image">
+      </div>
+
+      <div class="rightContent" style="margin-left: 25px;">
+        <div class="content">
+          <h4 style="margin-bottom: 20px;">{{ item.name }}</h4>
+          <p>Price: ₹{{ item.price }}</p>
+          <p>Desc: {{ item.description.slice(0, 80) }}....</p>
+        </div>
+
+        <div class="quantity" style="margin-top: 10px;">
+          <button (click)="decreaseQuantity(item)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="increaseQuantity(item)">+</button>
+        </div>
+
+        <div class="btn">
+          <button (click)="removeFromCart(item)" class="remove-button">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display subtotal below products -->
+    <div class="total-section">
+      <h3 *ngIf="cartItems.length >= 1">Subtotal({{ totalItemsQuantity }} items): ₹{{ total }} </h3>
+    </div>
+
+
+<ng-container *ngIf="cartItems.length >= 1">
+  <div class="eligibility">
+    <p style="color: green; margin: 10px; padding: 10px;" *ngIf="total>=500 ; else eligibility">
+      Your order is eligible for Free delivery
+    </p>
+    <h3 style="padding: 10px; margin: 10px;">Subtotal({{ totalItemsQuantity }}items): ₹{{ total }}</h3>
+    <div class="proceedToBuy">
+      <a routerLink="/buynow" style="margin-left: 60px;color: white;">Proceed To Buy</a>
+    </div>
+  </div>
+</ng-container>
+
+
+  </div>
+
+</div>
+
+<div class="ngtemplate">
+  <ng-template #emptyCart >
+    <div class="empty-cart-message">
+      Your cart is empty.
+    </div>
+  </ng-template>
+</div>
+<div class="ngtemplate">
+  <ng-template #eligibility >
+    <div class="eligibility-message" style="color: red; margin: 10px; padding: 10px;">
+      your cart is not eligible for free delivery.
+    </div>
+  </ng-template>
+
+</div>

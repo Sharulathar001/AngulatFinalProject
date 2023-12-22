@@ -1,0 +1,42 @@
+
+
+<div *ngIf="!reactiveLoginForms" class="form">
+  <form [formGroup]="reactiveLoginForms" #loginForm="ngForm" (ngSubmit)="onLoginCreate()" >
+
+    <!-- title -->
+    <div>
+      <h2 style="text-align: center; margin: 20px;font-weight:800;">Login</h2>
+    </div>
+
+    <!-- userName -->
+    <div class="text">
+      <label for="name">UserName</label>
+      <input type="text" name="name" id="name" formControlName="name" ngModel>
+      <span *ngIf="reactiveLoginForms.get('name')?.invalid && reactiveLoginForms.get('name')?.touched">Name is required</span>
+    </div>
+
+    <!-- password -->
+    <div class="text">
+      <label for="pass">Password:</label>
+      <input type="password" name="pass" id="pass" formControlName="pass" ngModel>
+      <span *ngIf="reactiveLoginForms.get('pass')?.errors?.['required'] && reactiveLoginForms.get('pass')?.touched">Password is required</span>
+    </div>
+
+    <!-- forgot password -->
+    <div>
+      <a routerLink="/contact" style="color: #180148;margin-left: 190px;font-weight: 600;">Forgot Password?</a>
+    </div>
+
+    <!-- submit -->
+     <div class="submit" name="submit">
+      <button type="submit"  >Login</button>
+    </div>
+
+    <!-- when new user to register -->
+    <div>
+      <a routerLink="/register" style="color: #180148; padding: 10px;margin-bottom: 20px; font-weight: 600;font-size: medium;">New User?</a>
+    </div>
+  </form>
+</div>
+<div>
+  </div>

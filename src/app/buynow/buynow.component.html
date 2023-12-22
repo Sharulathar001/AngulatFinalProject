@@ -1,0 +1,48 @@
+<h3>Check Out<i class="fa fa-shopping-cart"></i></h3>
+<form #checkoutForm="ngForm" (ngSubmit)="onSubmit(checkoutForm)">
+  <div class="buynow">
+    <li>Address</li>
+    <textarea name="address" id="address" cols="20" rows="5" placeholder="Address..." style="width: 100%;box-sizing: border-box;border-radius: 7px;" required [(ngModel)]="address"></textarea>
+
+    <li>Payment Method</li>
+
+    <label>
+      <input type="radio" name="payment" value="netBanking" [(ngModel)]="paymentMethod">
+      Net Banking
+      <div *ngIf="paymentMethod === 'netBanking'">
+        <select name="netBankingOption" id="netBankingOption" required [(ngModel)]="netBankingOption">
+          <option value="" disabled selected>Select an Option</option>
+          <option value="Axis Bank">Axis Bank</option>
+          <option value="Bank of India">Bank of India</option>
+          <option value="Canara Bank">Canara Bank</option>
+          <option value="Indian Overseas Bank">Indian Overseas Bank</option>
+          <option value="State Bank">State Bank</option>
+          <option value="Union Bank">Union Bank</option>
+        </select>
+      </div>
+    </label>
+
+    <label>
+      <input type="radio" name="payment" value="upi" [(ngModel)]="paymentMethod" (change)="toggleUPIInput()">
+      Other UPI Apps
+    </label>
+
+    <div *ngIf="showUPIInput && paymentMethod === 'upi'" class="upiIdInput">
+      <label for="upiId" style="margin-left: 10px;">Please enter your UPI ID</label><br>
+      <input type="text" id="upiId" name="upiId" [(ngModel)]="upiId" placeholder="Enter UPI App Name" style="border-radius: 7px;">
+      <span>{{verificationResult}}</span>
+      <button (click)="verifyUPI()" style="border-radius: 7px;">Verify</button>
+
+    </div>
+
+    <label>
+      <input type="radio" name="payment" value="cod" [(ngModel)]="paymentMethod">
+      Cash on Delivery/Pay on Delivery
+    </label>
+<label for="">
+  <h3 style="margin: 20px;margin-left: 120px;">Expected Delivery : {{ calculateDeliveryDate() }}</h3>
+
+</label>
+    <input type="submit" style=" margin-left: 170px;"[disabled]="!checkoutForm.valid" value="Save and Confirn Order">
+  </div>
+</form>

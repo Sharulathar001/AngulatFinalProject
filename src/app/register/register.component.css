@@ -1,0 +1,89 @@
+form
+{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border : 2px solid #180148;
+  width: 30%;
+  background-color: #999ede;
+  box-sizing: border-box;
+  align-items: center;
+  margin-left: 490px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 10px;}
+input{
+  width: 95%;
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #210363;
+}
+input:hover{
+  background-color:  #210363;
+  color: white;
+  padding: 10px;
+}
+label{
+  color: #180148;
+  font-size: medium;
+  font-weight: 600;
+  margin-left: 10px;
+}
+button{
+
+  background-color: #180148;
+  color: #999ede;
+  border: 1px solid #999ede;
+  padding: 13px;
+  margin: 10px;
+  border-radius: 10px;
+  margin-top: 0px;
+  font-weight: 600;
+  /* align-items: center; */
+  margin: 20px;
+  margin-left: 150px;
+
+}
+button:hover{
+  font-weight: bolder;
+  border: 2px solid #180148;
+  background-color:#999ede;
+  color: #180148;
+}
+.gender {
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+.gender label {
+  margin-right: 20px; /* Add some spacing between the options */
+}
+
+/* Style for the radio buttons (optional) */
+.gender input[type="radio"] {
+  /* Add your custom styles here */
+}
+
+input.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+input.ng-valid.ng-touched{
+  border: 2px solid green;
+}
+span{
+  color: red;
+  font-size: small;
+  margin-left: 2px;
+}
+.myForm.VALID{
+  border: 2px solid green;
+  box-shadow: 0 0 31px rgba(78, 233, 84, 0.7);
+}
+.myForm.INVALID {
+  border: 1px solid red;
+  box-shadow: 0 0 31px rgba(255,0,0, 0.7);
+}
+
+
+
+

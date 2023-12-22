@@ -1,0 +1,32 @@
+
+.search{
+  display: flex;
+}
+input{
+  border: 2px solid #180148;
+  padding: 3px;
+  width: 450px;
+  height: 30px;
+  border-radius: 5px;
+}
+input:hover{
+  background-color: #999ede;
+  color: #180148;
+  height: 35px;
+  font-weight: 600;
+  font-size: medium;
+  padding: 8px;
+}
+i
+{
+  border: 2px solid #180148;
+  border-radius: 3px;
+  padding: 5px;
+}
+.search input[type="text"]::placeholder {
+  text-align: center;
+}
+
+.offers{
+  display:block;
+}

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags, title, and styles -->
+</head>
+<body>
+  <!-- Angular component template -->
+  <div class="search">
+    <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+  </div>
+
+  <!-- Loop through products and apply styling -->
+  <div class="image-row">
+    <div class="product" *ngFor="let i of filteredProducts">
+      <div class="container">
+        <img [src]="i.image" alt="{{ i.name }}" (click)="navigateToEnlargedCard(i)" />
+        <h4 style="text-align: center;">{{ i.name }}</h4>
+        <div class="product-price">Price: ₹{{ i.price }}</div>
+        <p style="margin-right: 3px;">{{ i.description.slice(0, 80) }}...</p>
+        <div class="buttons">
+          <button
+            class="btn btn-cart"
+            *ngIf="!i.addedToCart; else goToCart"
+            (click)="addToCart(i)"
+          >
+            Add To Cart
+          </button>
+          <ng-template #goToCart>
+            <button class="btn btn-cart" (click)="navigateToCart()">
+              Added<i class="fas fa-check-circle green-icon"></i>
+            </button>
+            <!-- <span class="added-message">Added to Cart</span> -->
+          </ng-template>
+          <button class="btn btn-buy" (click)="buyNow()">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

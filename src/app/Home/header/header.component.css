@@ -1,0 +1,102 @@
+.ui-card{
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 2px 3px 5px #180148;
+  width: 70%;
+  margin: 20px;
+  margin-left: 200px;
+  border-radius: 30px;
+
+}
+.ui-card img {
+  z-index: 1;
+  margin-left: 10%;
+  width: 70%;
+  max-height: 500px;
+  border-radius: 30px;
+}
+.innerimg{
+  z-index: -1;
+}
+.offerbutton{
+  align-items: center;
+  margin: 10px;
+  margin-left: 550px;
+}
+#button{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.uicard{
+  width: 300px;
+  height: 370px;
+  margin-left: 100px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.uicard a{
+  color: black;
+  text-decoration: none;
+}
+.uicard a:hover{
+  text-decoration: underline;
+text-align: center;
+
+}
+
+.slider-image img{
+  width: 250px;
+  height: 300px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+.offers{
+  display: flex;
+}
+.titleOffer{
+  text-align: center;
+  padding: 20px;
+  width: 300px;
+  color: #180148;
+  margin-left: 500px;
+  border-radius: 15px;
+  background-color: #999ede;
+}
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+
+}
+
+.product {
+  border: 1px solid #999ede;
+  padding: 10px;
+  width: 23%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 25px;
+
+}
+
+.image-row img {
+  box-shadow: 3px 4px 5px #ccc;
+  border-radius: 7px;
+  width: 230px;
+  height: 250px;
+}
+.image-row img:hover {
+  box-shadow: 5px 7px 7px #ccc;
+  width: 232px;
+  height: 252px;
+}
+a{
+  color: black;
+}
+a:hover{
+  text-decoration: underline;
+}
+

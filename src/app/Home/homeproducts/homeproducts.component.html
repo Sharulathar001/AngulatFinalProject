@@ -1,0 +1,37 @@
+
+<div class="search">
+  <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+</div>
+<app-header></app-header>
+
+<!-- products -->
+<div class="image-row">
+  <div class="product" *ngFor="let i of filteredProducts">
+    <div class="container">
+      <img [src]="i.image" alt="{{ i.name }}" (click)="navigateToEnlargedCard(i)" />
+      <h4 style="text-align: center;">{{ i.name }}</h4>
+      <div product-price style="display: flex;align-items: center;">
+        <div style="margin-right: 20px;margin-left: 80px;"> ₹{{ i.offer }}</div>
+        <div  style="color:rgb(106, 110, 113);"><s> ₹{{ i.price }}</s></div>
+
+      </div>
+      <p style="margin-right: 3px;">{{ i.description.slice(0, 80) }}...</p>
+      <div class="buttons">
+        <button
+          class="btn btn-cart"
+          *ngIf="!i.addedToCart; else goToCart"
+          (click)="addToCart(i)"
+        >
+          Add To Cart
+        </button>
+        <ng-template #goToCart>
+          <button class="btn btn-cart" (click)="navigateToCart()">
+            Added<i class="fas fa-check-circle green-icon"></i>
+          </button>
+          <!-- <span class="added-message">Added to Cart</span> -->
+        </ng-template>
+        <button class="btn btn-buy" (click)="navigateToBuynow(i)">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
